@@ -130,7 +130,7 @@ define debnet::iface::dhcp (
   include debnet
 
   validate_string($ifname)
-  validate_bool($auto)
+  $auto.is_a(Boolean)
   validate_array($allows)
   validate_re($family, '^inet$' )
 

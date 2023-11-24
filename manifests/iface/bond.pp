@@ -203,7 +203,7 @@ define debnet::iface::bond(
       'bond-miimon'  => $miimon,
     }
 
-  validate_bool($use_carrier)
+  $use_carrier.is_a(Boolean)
   if $updelay {
     if is_string($updelay) {
       validate_re($updelay, '^\d+$')
